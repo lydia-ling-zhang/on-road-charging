@@ -27,11 +27,6 @@ def config_env(data_path:str, save_path:str):
         "Q4_dates_fpath": data_path+"2023Q4_dates.csv" # list of dates in 4th quarter
         }
     }
-    
-    with open(data_path+"config.json", "w") as json_file:
-        json.dump(config, json_file, indent=4)
-    
-    print("JSON configuration file created: config.json")
 
     return config
 
@@ -87,5 +82,7 @@ if __name__ == "__main__":
         # Save each case as a JSON file
         with open(save_path + f"/case_{case + 1}.json", "w") as json_file:
             json.dump(config, json_file, indent=4)
+
+    print("JSON configuration file created: case.json")
 
         
